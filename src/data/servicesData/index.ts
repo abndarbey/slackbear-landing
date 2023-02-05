@@ -1,8 +1,9 @@
-import programmerImg from 'assets/images/programmer.svg'
+import programmingImg from 'assets/images/programming.svg'
 import designGirlImg from 'assets/images/design-girl.svg'
 import projectManagementImg from 'assets/images/project-management.svg'
 import projectTeamImg from 'assets/images/project-team.svg'
-import codeReviewImg from 'assets/images/code-review.svg'
+import testingImg from 'assets/images/testing.svg'
+import supportImg from 'assets/images/support.svg'
 import {
     IconUsers,
     IconBugOff,
@@ -35,7 +36,7 @@ export const engineeringService = {
         Our teams have been building software for decades.
         We're makers at heart and think of engineering as a craft.
     `,
-    image: programmerImg,
+    image: programmingImg,
     columns: 1,
     cardData: [
         {
@@ -231,7 +232,7 @@ export const testingService = {
         and performance across all use cases. Writing tests while building the product ensures we're covering all edge cases and
         reduces risk before going to market.
     `,
-    image: codeReviewImg,
+    image: testingImg,
     columns: 1,
     cardData: [
         {
@@ -275,7 +276,7 @@ export const trainingService = {
         The technology landscape changes very fast. It's important to think ten steps ahead to ensure your team has
         the right skill to gain market share. We review your technology stack and equip your teams with the skills to move forward.
     `,
-    image: codeReviewImg,
+    image: supportImg,
     columns: 1,
     cardData: [
         {
