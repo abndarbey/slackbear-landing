@@ -3,14 +3,14 @@ import PageTitle from 'components/PageTitle'
 import HeroHeader from 'sections/HeroHeader'
 import Footer from 'components/Footer'
 
-import { contactHero } from 'data/contactPage'
+import { aboutHero } from 'data/aboutpageData'
 import ContactSection from 'sections/ContactSection'
 
 export default function Home() {
     return (
         <Fragment>
             <PageTitle title='About Us' />
-            <HeroHeader {...contactHero} />
+            <HeroHeader {...aboutHero} />
             <ContactSection />
             <Footer />
         </Fragment>
