@@ -1,4 +1,6 @@
+import { ButtonVariant } from "@mantine/core"
 import { TablerIcon } from "@tabler/icons"
+import { ReactNode } from "react"
 
 export type PageProps = {
     title?: string
@@ -8,6 +10,9 @@ export type PageProps = {
 export type ButtonProps = {
     name: string
     link: string
+    icon?: TablerIcon
+    color?: string
+    variant?: ButtonVariant
 }
 
 export type FeatureProps = {

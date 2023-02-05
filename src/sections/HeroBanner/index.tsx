@@ -1,22 +1,35 @@
-import { Title, Text, Button, Container } from '@mantine/core'
+import { Title, Text, Button, Container, Group } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { ButtonProps } from 'types/types'
 import { Dots } from 'components/Dots'
 import { heroBannerStyles } from './styles'
 import SectionWrapper from 'components/SectionWrapper'
+import { IconArrowNarrowRight, IconArrowRight } from '@tabler/icons'
 
 interface HeroBannerProps {
     titleFragment1: string
     titleHighlight: string
     titleFragment2: string
     description?: string
-    button1: ButtonProps
-    button2: ButtonProps
+    buttons?: ButtonProps[]
 }
 
 export default function HeroBanner(props: HeroBannerProps) {
     const { classes } = heroBannerStyles()
     const router = useRouter()
+
+    const renderButtons = props.buttons?.map((item, key) => (
+        <Button
+            key={key}
+            className={classes.control}
+            variant={item.variant!}
+            size="lg"
+            rightIcon={<IconArrowNarrowRight />}
+            onClick={(e: any) => router.push(item?.link!)}
+        >
+            {item?.name}
+        </Button>
+    ))
 
     return (
         <SectionWrapper hero>
@@ -42,12 +55,7 @@ export default function HeroBanner(props: HeroBannerProps) {
                     </Container>
 
                     <div className={classes.controls}>
-                        <Button className={classes.control} size="lg" variant="default" color="gray">
-                            {props.button1.name}
-                        </Button>
-                        <Button className={classes.control} size="lg" onClick={(e: any) => router.push(props.button2.link)}>
-                            {props.button2.name}
-                        </Button>
+                        {renderButtons}
                     </div>
                 </div>
             </div>

@@ -1,21 +1,20 @@
-import { IconGauge, IconMagnet, IconGlobe, IconCpu, IconLeaf, IconLine } from '@tabler/icons'
+import { IconGauge, IconMagnet, IconGlobe, IconCpu, IconLeaf, IconLine, IconArrowNarrowRight } from '@tabler/icons'
 import { articlesData } from 'data/caseStudiesData/articlesData'
 
 export const homeHero = {
-    titleFragment1: `Small Team With a`,
+    titleFragment1: `Small Teams With a`,
     titleHighlight: `Large`,
     titleFragment2: `Impact`,
     description: `
         Get digital products, engineered & designed to meet your business needs.
     `,
-    button1: {
-        name: `Explore More`,
-        link: ``
-    },
-    button2: {
-        name: `Contact Us`,
-        link: `/contact`
-    },
+    buttons: [
+        {
+            name: `Lets Talk`,
+            link: `/contact`,
+            rightIcon: IconArrowNarrowRight,
+        },
+    ]
 }
 
 export const homeFeatureGrid = {
