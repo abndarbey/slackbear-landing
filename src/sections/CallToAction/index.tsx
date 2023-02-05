@@ -1,5 +1,5 @@
 import { Text, Title, TextInput, Button, Image, Container } from '@mantine/core'
-import image from 'assets/images/email.svg'
+import mailboxImg from 'assets/images/mailbox.svg'
 import SectionWrapper from 'components/SectionWrapper'
 import { ctaStyles } from './styles'
 
@@ -22,7 +22,7 @@ export default function CallToAction() {
                         <Button className={classes.control}>Submit</Button>
                     </div>
                 </div>
-                <Image src={image.src} className={classes.image} alt="img" />
+                <Image src={mailboxImg.src} className={classes.image} alt="img" />
             </div>
         </SectionWrapper>
     )
