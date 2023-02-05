@@ -17,3 +17,11 @@ export type FeatureProps = {
     link?: string
     externalLink?: boolean
 }
+
+export type ArticleCardProps = {
+    superTitle: string
+    title: string
+    description: string
+    image: any
+    showDescription?: boolean
+}

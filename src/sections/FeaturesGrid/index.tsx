@@ -5,7 +5,7 @@ import {
     useMantineTheme,
 } from '@mantine/core'
 import SectionWrapper from 'components/SectionWrapper'
-import { SectionHeader } from 'components/SectionHeader'
+import SectionHeader from 'components/SectionHeader'
 import { FeatureProps } from 'types/types'
 import { featuresGridStyles } from './styles'
 
@@ -40,7 +40,6 @@ export default function FeaturesGrid(props: FeaturesGridProps) {
         <SectionWrapper>
             <SectionHeader superTitle={props.superTitle} title={props.title} description={props.description} />
             <SimpleGrid
-                mt={60}
                 cols={props.columns}
                 spacing={theme.spacing.xl * 2}
                 breakpoints={[

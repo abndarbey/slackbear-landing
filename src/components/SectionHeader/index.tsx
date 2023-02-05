@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import {Title, Text } from '@mantine/core'
+import {Title, Text, Box } from '@mantine/core'
 import { sectionTitleStyles } from './styles'
 
 interface SectionHeaderProps {
@@ -7,11 +7,11 @@ interface SectionHeaderProps {
     description?: string
     superTitle?: string
 }
-export function SectionHeader(props: SectionHeaderProps) {
+export default function SectionHeader(props: SectionHeaderProps) {
     const { classes } = sectionTitleStyles()
     
     return (
-        <Fragment>
+        <Box pb={50}>
             {props.superTitle &&
                 <Text className={classes.supTitle}>{props.superTitle}</Text>
             }
@@ -25,6 +25,6 @@ export function SectionHeader(props: SectionHeaderProps) {
                     {props.description}
                 </Text>
             }
-        </Fragment>
+        </Box>
     )
 }

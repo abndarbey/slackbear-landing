@@ -1,7 +1,7 @@
 import { SimpleGrid, Box, Text } from '@mantine/core'
 import ContactIconsList from 'components/ContactIcon'
 import SectionWrapper from 'components/SectionWrapper'
-import { SectionHeader } from 'components/SectionHeader'
+import SectionHeader from 'components/SectionHeader'
 import ContactForm from './ContactForm'
 import { contactDetailsStyles } from './styles'
 

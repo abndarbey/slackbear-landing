@@ -1,13 +1,9 @@
-import {
-    Text,
-    Card,
-    SimpleGrid,
-} from '@mantine/core'
+import { useRouter } from 'next/router'
+import { Text, Card, SimpleGrid } from '@mantine/core'
 import SectionWrapper from 'components/SectionWrapper'
-import { SectionHeader } from 'components/SectionHeader'
+import SectionHeader from 'components/SectionHeader'
 import { featureCardsStyles } from './styles'
 import { FeatureProps } from 'types/types'
-import { useRouter } from 'next/router'
 
 interface FeatureCardProps {
     columns: number
@@ -17,9 +13,7 @@ interface FeatureCardProps {
     cardData: FeatureProps[]
 }
 
-export default function FeaturesCards(props: FeatureCardProps) {
-    const { classes, theme } = featureCardsStyles()
-
+export default function FeatureCards(props: FeatureCardProps) {
     const featureCards = props.cardData.map((item, key) => (
         <FeatureCard key={key} {...item} />
     ))
@@ -33,7 +27,7 @@ export default function FeaturesCards(props: FeatureCardProps) {
             />
             <SimpleGrid
                 cols={props.columns}
-                spacing="xl" mt={50}
+                spacing="xl"
                 breakpoints={[{ maxWidth: 'md', cols: 1 }]}
             >
                 {featureCards}
@@ -64,7 +58,7 @@ function CardWithInternalLink(props: FeatureProps) {
 }
 
 function FeatureCard(props: FeatureProps) {
-    const { classes, theme } = featureCardsStyles()
+    const { classes } = featureCardsStyles()
     if (props.externalLink) {
         return (
             <a

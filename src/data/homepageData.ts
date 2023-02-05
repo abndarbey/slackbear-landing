@@ -1,4 +1,5 @@
-import { IconGauge, IconUser, IconCookie, IconMagnet, IconGlobe, IconCpu } from '@tabler/icons'
+import { IconGauge, IconMagnet, IconGlobe, IconCpu, IconLeaf, IconLine } from '@tabler/icons'
+import { articlesData } from 'data/caseStudiesData/articlesData'
 
 export const homeHero = {
     titleFragment1: `Small Team With a`,
@@ -58,4 +59,49 @@ export const homeFeatureGrid = {
             `,
         },
     ]
+}
+
+export const homeFeatureCards = {
+    columns: 2,
+    superTitle: `Our Solutions`,
+    title: `Confidence to Show Our Work`,
+    description: `
+        Choosing a partner is difficult, but it doesn't have to be uninformed.
+    `,
+    cardData: [
+        {
+            icon: IconLeaf ,
+            link: 'https://www.springbook.in',
+            externalLink: true,
+            title: 'Springbook',
+            description: `
+                Agile processes allow Wednesday to bridge the gap between your vision and the team that executes it.
+                We iterate fast, seek feedback, ask questions, and communicate openly.
+            `,
+        },
+        {
+            icon: IconLine,
+            link: '/services',
+            title: 'Nexport',
+            description: `
+                Like attracts like. We've spent years building high-performance applications and are known for quality.
+                We've written books on Software Development and spoken at international conferences.
+            `,
+        },
+    ]
+}
+
+export const homeCaseStudiesData = {
+    columns: 3,
+    cardLimit: 3,
+    showSectionHeader: {
+        superTitle: `Case Studies`,
+        title: `Confidence to Show Our Work`,
+        description: `
+            A good house needs a solid foundation, product development follows the same principles.
+            Unlike other professions where you can touch and feel their creation, software lives on servers,
+            and it's tough to understand whether it's written well - maintainable, scalable, resilient, and fault-tolerant.
+        `
+    },
+    cardData: articlesData
 }
