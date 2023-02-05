@@ -5,7 +5,7 @@ import {
     SimpleGrid,
 } from '@mantine/core'
 import { Dots } from 'components/Dots'
-import { HeroSection } from 'components/SectionCard'
+import SectionWrapper from 'components/SectionWrapper'
 import { heroHeaderStyles } from './styles'
 
 interface HeroHeaderProps {
@@ -17,7 +17,7 @@ interface HeroHeaderProps {
 export default function HeroHeader(props: HeroHeaderProps) {
     const { classes } = heroHeaderStyles()
     return (
-        <HeroSection>
+        <SectionWrapper hero>
             <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
             <Dots className={classes.dots} style={{ left: 60, top: 0 }} />
             <Dots className={classes.dots} style={{ left: 0, top: 140 }} />
@@ -31,6 +31,6 @@ export default function HeroHeader(props: HeroHeaderProps) {
                 </div>
                 <Image src={props.image.src} className={classes.image} alt="img" />
             </SimpleGrid>
-        </HeroSection>
+        </SectionWrapper>
     )
 }

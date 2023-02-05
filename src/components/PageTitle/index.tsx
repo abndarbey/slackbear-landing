@@ -5,8 +5,8 @@ interface PageTitleProps {
     title: string
 }
 
-const PageTitle: FC<PageTitleProps> = (props) => {
-    const pageTitle: string = `${props.title} | Slackbear`
+export default function PageTitle(props: PageTitleProps) {
+    const pageTitle: string = `${capitalizeFirstLetter(props.title)} | Slackbear`
     return (
         <Head>
             <title>{pageTitle}</title>
@@ -16,4 +16,17 @@ const PageTitle: FC<PageTitleProps> = (props) => {
     )
 }
 
-export default PageTitle
+function capitalizeFirstLetter(str: string) {
+    const sentance: string = removeHypen(str)
+    const words = sentance.split(" ")
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+
+    return words.join(" ")
+}
+
+function removeHypen(str: string) {
+    return str.replace('-', ' ')
+}

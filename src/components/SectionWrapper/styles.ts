@@ -1,6 +1,6 @@
 import { createStyles } from "@mantine/core"
 
-export const sectionCardStyles = createStyles((theme) => ({
+export const sectionWarpperStyles = createStyles((theme) => ({
     heroSectionWrapper: {
         position: 'relative',
         boxSizing: 'border-box',

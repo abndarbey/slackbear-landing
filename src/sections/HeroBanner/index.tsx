@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { ButtonProps } from 'types/types'
 import { Dots } from 'components/Dots'
 import { heroBannerStyles } from './styles'
-import { HeroSection } from 'components/SectionCard'
+import SectionWrapper from 'components/SectionWrapper'
 
 interface HeroBannerProps {
     titleFragment1: string
@@ -19,7 +19,7 @@ export default function HeroBanner(props: HeroBannerProps) {
     const router = useRouter()
 
     return (
-        <HeroSection>
+        <SectionWrapper hero>
             <div className={classes.inner}>
                 <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
                 <Dots className={classes.dots} style={{ left: 60, top: 0 }} />
@@ -51,6 +51,6 @@ export default function HeroBanner(props: HeroBannerProps) {
                     </div>
                 </div>
             </div>
-        </HeroSection>
+        </SectionWrapper>
     )
 }

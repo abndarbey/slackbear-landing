@@ -4,7 +4,7 @@ import {
     SimpleGrid,
 } from '@mantine/core'
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons'
-import { InfoSection } from 'components/SectionCard'
+import SectionWrapper from 'components/SectionWrapper'
 import { SectionHeader } from 'components/SectionHeader'
 import { featureCardsStyles } from './styles'
 import { FeatureProps } from 'types/types'
@@ -43,24 +43,24 @@ export default function FeaturesCards(props: FeatureCardProps) {
     const { classes, theme } = featureCardsStyles()
     const router = useRouter()
 
-    const features = props.cardData.map((feature) => (
-        <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
-            <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
+    const features = props.cardData.map((item) => (
+        <Card key={item.title} shadow="md" radius="md" className={classes.card} p="xl">
+            <item.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
             <Text
                 size="lg" weight={500} mt="md"
                 className={classes.cardTitle}
-                onClick={(e: any) => router.push(feature.link!)}
+                onClick={(e: any) => router.push(item.link!)}
             >
-                {feature.title}
+                {item.title}
             </Text>
             <Text size="sm" color="dimmed" mt="sm">
-                {feature.description}
+                {item.description}
             </Text>
         </Card>
     ))
     
     return (
-        <InfoSection>
+        <SectionWrapper>
             <SectionHeader
                 superTitle={props.superTitle}
                 title={props.title}
@@ -73,6 +73,6 @@ export default function FeaturesCards(props: FeatureCardProps) {
             >
                 {features}
             </SimpleGrid>
-        </InfoSection>
+        </SectionWrapper>
     )
 }

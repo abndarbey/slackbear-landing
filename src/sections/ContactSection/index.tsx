@@ -1,6 +1,6 @@
 import { SimpleGrid, Box, Text } from '@mantine/core'
 import ContactIconsList from 'components/ContactIcon'
-import { InfoSection } from 'components/SectionCard'
+import SectionWrapper from 'components/SectionWrapper'
 import { SectionHeader } from 'components/SectionHeader'
 import ContactForm from './ContactForm'
 import { contactDetailsStyles } from './styles'
@@ -8,7 +8,7 @@ import { contactDetailsStyles } from './styles'
 export default function ContactDetails() {
     const { classes } = contactDetailsStyles()
     return (
-        <InfoSection>
+        <SectionWrapper>
             <SectionHeader
                 title="Let's build awesome digital products together"
                 description={`However ambitious, we'd love to design and build your next big idea or work on an existing one.`}
@@ -19,6 +19,6 @@ export default function ContactDetails() {
                 </Box>
                 <ContactForm />
             </SimpleGrid>
-        </InfoSection>
+        </SectionWrapper>
     )
 }

@@ -1,13 +1,13 @@
 import { Text, Title, TextInput, Button, Image, Container } from '@mantine/core'
 import image from 'assets/images/email.svg'
-import { InfoSection } from 'components/SectionCard'
+import SectionWrapper from 'components/SectionWrapper'
 import { ctaStyles } from './styles'
 
 export default function CallToAction() {
     const { classes } = ctaStyles()
     
     return (
-        <InfoSection>
+        <SectionWrapper>
             <div className={classes.wrapper}>
                 <div className={classes.body}>
                     <Title className={classes.title}>
@@ -24,6 +24,6 @@ export default function CallToAction() {
                 </div>
                 <Image src={image.src} className={classes.image} alt="img" />
             </div>
-        </InfoSection>
+        </SectionWrapper>
     )
 }

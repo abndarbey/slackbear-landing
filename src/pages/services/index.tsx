@@ -6,7 +6,6 @@ import Footer from 'components/Footer'
 
 import { serviceHero, serviceFeatureCards } from 'data/servicepage'
 import CallToAction from 'sections/CallToAction'
-import HeroBanner2 from 'sections/HeroBanner2'
 
 export default function Services() {
     return (

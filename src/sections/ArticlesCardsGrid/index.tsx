@@ -1,5 +1,5 @@
-import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio } from '@mantine/core'
-import { InfoSection } from 'components/SectionCard';
+import { createStyles, SimpleGrid, Card, Image, Text, AspectRatio } from '@mantine/core'
+import SectionWrapper from 'components/SectionWrapper';
 import { SectionHeader } from 'components/SectionHeader';
 
 const mockdata = [
@@ -68,7 +68,7 @@ export default function ArticlesCardsGrid() {
     ))
 
     return (
-        <InfoSection>
+        <SectionWrapper>
             <SectionHeader
                 superTitle='Articles'
                 title='Our Work'
@@ -77,6 +77,6 @@ export default function ArticlesCardsGrid() {
             <SimpleGrid cols={2} mt={60} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                 {cards}
             </SimpleGrid>
-        </InfoSection>
+        </SectionWrapper>
     )
 }
