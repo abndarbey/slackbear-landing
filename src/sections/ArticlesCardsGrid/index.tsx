@@ -80,12 +80,10 @@ const articlesCardsGridStyles = createStyles((theme) => ({
 }))
 
 export default function ArticlesCardsGrid() {
-    const { classes } = articlesCardsGridStyles()
-
-    const cards = mockdata.map((article) => (
-        <Card key={article.title} p="md" radius="md" component="a" href="#" className={classes.card}>
-            <ArticleCard {...article}/>
-        </Card>
+    const cards = mockdata.map((article, key) => (
+        <div key={key}>
+            <ArticleCard {...article} />
+        </div>
     ))
 
     return (
