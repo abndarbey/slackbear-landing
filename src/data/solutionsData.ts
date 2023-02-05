@@ -11,7 +11,7 @@ export const solutionsHero = {
 
 export const solutionsFeatureCards = {
     columns: 2,
-    superTitle: `Case Studies`,
+    superTitle: `Our Work`,
     title: `Confidence to Show Our Work`,
     description: `
         Choosing a partner is difficult, but it doesn't have to be uninformed.
@@ -20,6 +20,7 @@ export const solutionsFeatureCards = {
         {
             icon: IconLeaf ,
             link: 'https://www.springbook.in',
+            externalLink: true,
             title: 'Springbook',
             description: `
                 Agile processes allow Wednesday to bridge the gap between your vision and the team that executes it.
@@ -28,7 +29,7 @@ export const solutionsFeatureCards = {
         },
         {
             icon: IconLine,
-            link: 'https://www.nexport.in',
+            link: '/services',
             title: 'Nexport',
             description: `
                 Like attracts like. We've spent years building high-performance applications and are known for quality.

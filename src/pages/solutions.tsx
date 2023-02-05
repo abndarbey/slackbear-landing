@@ -4,7 +4,7 @@ import HeroHeader from 'sections/HeroHeader'
 import FeaturesCards from 'sections/FeatureCards'
 import Footer from 'components/Footer'
 
-import { solutionsHero, solutionsFeatureCards } from 'data/solutionsPage'
+import { solutionsHero, solutionsFeatureCards } from 'data/solutionsData'
 import CallToAction from 'sections/CallToAction'
 
 export default function Home() {

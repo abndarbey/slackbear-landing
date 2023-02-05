@@ -15,4 +15,5 @@ export type FeatureProps = {
     title: string
     description: string
     link?: string
+    externalLink?: boolean
 }

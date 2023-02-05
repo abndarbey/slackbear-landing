@@ -3,33 +3,11 @@ import {
     Card,
     SimpleGrid,
 } from '@mantine/core'
-import { IconGauge, IconUser, IconCookie } from '@tabler/icons'
 import SectionWrapper from 'components/SectionWrapper'
 import { SectionHeader } from 'components/SectionHeader'
 import { featureCardsStyles } from './styles'
 import { FeatureProps } from 'types/types'
 import { useRouter } from 'next/router'
-
-const mockdata = [
-    {
-        title: 'Extreme performance',
-        description:
-            'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
-        icon: IconGauge,
-    },
-    {
-        title: 'Privacy focused',
-        description:
-            'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
-        icon: IconUser,
-    },
-    {
-        title: 'No third parties',
-        description:
-            'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
-        icon: IconCookie,
-    },
-]
 
 interface FeatureCardProps {
     columns: number
@@ -41,22 +19,9 @@ interface FeatureCardProps {
 
 export default function FeaturesCards(props: FeatureCardProps) {
     const { classes, theme } = featureCardsStyles()
-    const router = useRouter()
 
-    const features = props.cardData.map((item) => (
-        <Card key={item.title} shadow="md" radius="md" className={classes.card} p="xl">
-            <item.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
-            <Text
-                size="lg" weight={500} mt="md"
-                className={classes.cardTitle}
-                onClick={(e: any) => router.push(item.link!)}
-            >
-                {item.title}
-            </Text>
-            <Text size="sm" color="dimmed" mt="sm">
-                {item.description}
-            </Text>
-        </Card>
+    const featureCards = props.cardData.map((item, key) => (
+        <FeatureCard key={key} {...item} />
     ))
     
     return (
@@ -71,8 +36,49 @@ export default function FeaturesCards(props: FeatureCardProps) {
                 spacing="xl" mt={50}
                 breakpoints={[{ maxWidth: 'md', cols: 1 }]}
             >
-                {features}
+                {featureCards}
             </SimpleGrid>
         </SectionWrapper>
     )
+}
+
+function CardWithInternalLink(props: FeatureProps) {
+    const { classes, theme } = featureCardsStyles()
+    const router = useRouter()
+
+    return (
+        <Card shadow="md" radius="md" className={classes.card} p="xl">
+            <props.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
+            <Text
+                size="lg" weight={500} mt="md"
+                className={classes.cardTitle}
+                onClick={(e: any) => router.push(props.link!)}
+            >
+                {props.title}
+            </Text>
+            <Text size="sm" color="dimmed" mt="sm">
+                {props.description}
+            </Text>
+        </Card>
+    )
+}
+
+function FeatureCard(props: FeatureProps) {
+    const { classes, theme } = featureCardsStyles()
+    if (props.externalLink) {
+        return (
+            <a
+                className={classes.link}
+                href={props.link}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <CardWithInternalLink {...props} />
+            </a>
+        )
+    } else {
+        return (
+            <CardWithInternalLink {...props} />
+        )
+    }
 }

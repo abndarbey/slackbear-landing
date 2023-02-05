@@ -6,7 +6,8 @@ import FeaturesCards from 'sections/FeatureCards'
 import CallToAction from 'sections/CallToAction'
 import Footer from 'components/Footer'
 
-import { homeHero, homeFeatureGrid, homeFeatureCards } from 'data/homepage'
+import { homeHero, homeFeatureGrid } from 'data/homepage'
+import { solutionsFeatureCards } from 'data/solutionsData'
 
 export default function Home() {
     return (
@@ -14,7 +15,7 @@ export default function Home() {
             <PageTitle title='Home' />
             <HeroBanner {...homeHero} />
             <FeaturesGrid {...homeFeatureGrid} />
-            <FeaturesCards {...homeFeatureCards} />
+            <FeaturesCards {...solutionsFeatureCards} />
             <CallToAction />
             <Footer />
         </Fragment>
