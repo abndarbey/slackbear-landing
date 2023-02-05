@@ -20,31 +20,35 @@ export const topbarLinks: TopbarLinkProps[] = [
         label: "Services"
     },
     {
+        link: "/case-studies",
+        label: "Case Studies"
+    },
+    {
         link: "/contact",
         label: "Contact"
     },
-    {
-        link: "#1",
-        label: "Case Studies",
-        links: [
-            {
-                link: "/docs",
-                label: "Documentation"
-            },
-            {
-                link: "/resources",
-                label: "Resources"
-            },
-            {
-                link: "/community",
-                label: "Community"
-            },
-            {
-                link: "/blog",
-                label: "Blog"
-            }
-        ]
-    },
+    // {
+    //     link: "#1",
+    //     label: "Case Studies",
+    //     links: [
+    //         {
+    //             link: "/docs",
+    //             label: "Documentation"
+    //         },
+    //         {
+    //             link: "/resources",
+    //             label: "Resources"
+    //         },
+    //         {
+    //             link: "/community",
+    //             label: "Community"
+    //         },
+    //         {
+    //             link: "/blog",
+    //             label: "Blog"
+    //         }
+    //     ]
+    // },
     // {
     //     link: "#2",
     //     label: "Support",

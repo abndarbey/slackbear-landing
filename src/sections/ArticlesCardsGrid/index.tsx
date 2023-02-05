@@ -69,12 +69,7 @@ export default function ArticlesCardsGrid() {
 
     return (
         <SectionWrapper>
-            <SectionHeader
-                superTitle='Articles'
-                title='Our Work'
-                description='Work'
-            />
-            <SimpleGrid cols={2} mt={60} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+            <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                 {cards}
             </SimpleGrid>
         </SectionWrapper>
