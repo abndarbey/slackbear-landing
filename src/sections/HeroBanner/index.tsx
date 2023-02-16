@@ -22,6 +22,7 @@ export default function HeroBanner(props: HeroBannerProps) {
         <Button
             key={key}
             className={classes.control}
+            color={item.color!}
             variant={item.variant!}
             size="lg"
             rightIcon={<IconArrowNarrowRight />}
