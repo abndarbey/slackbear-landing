@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core'
+import { ButtonStylesParams, ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core'
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import GlobalTheme from './GlobalTheme'
 
@@ -32,6 +32,27 @@ export default function ThemeProvider(props: ThemeProviderProps) {
                         oceanBlue: ['#7AD1DD', '#5FCCDB', '#44CADC', '#2AC9DE', '#1AC2D9', '#11B7CD', '#09ADC3', '#0E99AC', '#128797', '#147885'],
                     },
                     primaryColor: 'brand',
+                    components: {
+                        Button: {
+                            // Subscribe to theme and component params
+                            styles: (theme, params: ButtonStylesParams) => ({
+                                root: {
+                                // height: 80,
+                                // padding: '0 30px',
+                                // marginLeft: theme.spacing.md,
+                                backgroundColor:
+                                    params.variant === 'filled'
+                                    ? theme.colors[params.color || theme.primaryColor][6]
+                                    : undefined,
+                                    ":hover": {
+                                        backgroundColor: theme.colorScheme === "dark" ? "#fff" : "#000",
+                                        color: theme.colorScheme === "dark" ? "#000" : "#fff",
+                                        transition: "0.5s all ease",
+                                    }
+                                },
+                            }),
+                        },
+                    },
                 }}
             >
                 <GlobalTheme />

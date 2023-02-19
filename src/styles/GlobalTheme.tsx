@@ -21,11 +21,6 @@ export default function GlobalTheme() {
                     color: "inherit",
                     textDecoration: "none",
                 },
-
-                "primaryButton": {
-                    backgroundColor: theme.colorScheme === 'dark' ? theme.primaryColor : theme.white,
-                    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-                }
             })}
         />
     )

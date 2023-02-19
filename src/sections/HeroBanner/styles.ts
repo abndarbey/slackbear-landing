@@ -80,13 +80,13 @@ export const heroBannerStyles = createStyles((theme) => ({
         },
 
         '@media (max-width: 520px)': {
-        height: 42,
-        fontSize: theme.fontSizes.md,
+            height: 42,
+            fontSize: theme.fontSizes.md,
 
-        '&:not(:first-of-type)': {
-            marginTop: theme.spacing.md,
-            marginLeft: 0,
-        },
+            '&:not(:first-of-type)': {
+                marginTop: theme.spacing.md,
+                marginLeft: 0,
+            },
         },
     },
 }))
