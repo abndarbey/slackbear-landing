@@ -1,11 +1,11 @@
 import { ReactElement, ReactNode } from 'react'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core'
+import { ColorScheme } from '@mantine/core'
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import { NotificationsProvider } from '@mantine/notifications'
 import { ModalsProvider } from '@mantine/modals'
-import { LandingLayout, ErrorLayout } from 'Layout'
+import { LandingLayout } from 'Layout'
 
 import { ApolloProvider } from '@apollo/client'
 import { client } from '@lib/apollo/client'
@@ -40,12 +40,9 @@ export default function App(props: AppPropsWithLayout) {
             <ThemeProvider>
                 <NotificationsProvider position="bottom-right" zIndex={999999}>
                     <ModalsProvider>
-                        {
-                            Component.getErrorLayout ? <ErrorLayout><Component {...pageProps} /></ErrorLayout> :
-                            <LandingLayout>
-                                <Component {...pageProps} />
-                            </LandingLayout>
-                        }
+                        <LandingLayout>
+                            <Component {...pageProps} />
+                        </LandingLayout>
                     </ModalsProvider>
                 </NotificationsProvider>
             </ThemeProvider>
