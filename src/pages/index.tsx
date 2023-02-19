@@ -1,9 +1,10 @@
 import { Fragment } from 'react'
+import dynamic from 'next/dynamic'
 import PageTitle from 'components/PageTitle'
 import HeroBanner from 'sections/HeroBanner'
 import FeaturesGrid from 'sections/FeaturesGrid'
 import FeaturesCards from 'sections/FeatureCards'
-import ArticlesCardsGrid from 'sections/ArticlesCardsGrid'
+const ArticlesCardsGrid = dynamic(() => import('sections/ArticlesCardsGrid'))
 import CallToAction from 'sections/CallToAction'
 import Footer from 'components/Footer'
 
@@ -27,3 +28,5 @@ export default function Home() {
         </Fragment>
     )
 }
+
+

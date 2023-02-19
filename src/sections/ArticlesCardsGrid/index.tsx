@@ -2,7 +2,6 @@ import { SimpleGrid, Card, Image, Text, AspectRatio } from '@mantine/core'
 import SectionHeader from 'components/SectionHeader'
 import SectionWrapper from 'components/SectionWrapper'
 import { ArticleCardProps } from 'types/types'
-import { articlesData } from './data'
 import { articlesCardsGridStyles } from './styles'
 
 interface ArticleCardsGridProps {
