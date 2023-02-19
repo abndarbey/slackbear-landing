@@ -21,8 +21,15 @@ export const footerStyles = createStyles((theme) => ({
 
     links: {
         [theme.fn.smallerThan('sm')]: {
-        marginTop: theme.spacing.lg,
-        marginBottom: theme.spacing.sm,
+            marginTop: theme.spacing.lg,
+            marginBottom: theme.spacing.sm,
         },
     },
+
+    copyright: {
+        [theme.fn.smallerThan('sm')]: {
+            marginTop: theme.spacing.lg,
+            marginBottom: theme.spacing.sm,
+        },
+    }
 }))

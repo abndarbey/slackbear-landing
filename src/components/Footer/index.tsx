@@ -24,7 +24,7 @@ export default function Footer() {
             <Container size="lg" className={classes.inner}>
                 <Logo />
                 {/* <Group className={classes.links}>{items}</Group> */}
-                <Text color="dimmed" size="sm">
+                <Text color="dimmed" size="sm" className={classes.copyright}>
                     &copy; {(new Date().getFullYear())} Slackbear Communications. All rights reserved.
                 </Text>
                 <Group spacing="xs" position="right" noWrap>
