@@ -1,10 +1,12 @@
 import { ReactNode } from 'react'
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core'
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
+import GlobalTheme from './GlobalTheme'
 
 interface ThemeProviderProps {
     children: ReactNode
 }
+
 export default function ThemeProvider(props: ThemeProviderProps) {
     const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
         key: 'mantine-color-scheme',
@@ -32,7 +34,8 @@ export default function ThemeProvider(props: ThemeProviderProps) {
                     primaryColor: 'brand',
                 }}
             >
-            {props.children}
+                <GlobalTheme />
+                {props.children}
             </MantineProvider>
         </ColorSchemeProvider>
     )
