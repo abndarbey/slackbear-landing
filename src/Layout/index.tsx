@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import Topbar from 'components/Topbar'
-import Topbar2 from 'components/Topbar/Topbar2'
+// import Topbar from 'components/Topbar'
+import Topbar from 'components/Topbar/Topbar3'
 import GenericHeader from 'components/GenericHeader'
 import { ReactNode } from 'react'
 import { layoutStyles } from './styles'
@@ -16,7 +16,7 @@ export function LandingLayout(props: ILayoutProps) {
     return (
         <div className={classes.container}>
             <nav className={classes.topbar}>
-                <Topbar2 />
+                <Topbar />
             </nav>
             <main className={classes.content}>
                 {props.children}
