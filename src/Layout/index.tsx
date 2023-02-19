@@ -1,7 +1,4 @@
-import { useRouter } from 'next/router'
-// import Topbar from 'components/Topbar'
-import Topbar from 'components/Topbar/Topbar3'
-import GenericHeader from 'components/GenericHeader'
+import Topbar from 'components/Topbar'
 import { ReactNode } from 'react'
 import { layoutStyles } from './styles'
 
@@ -11,7 +8,6 @@ interface ILayoutProps {
 
 export function LandingLayout(props: ILayoutProps) {
     const { classes } = layoutStyles()
-    const router = useRouter()
 
     return (
         <div className={classes.container}>
@@ -21,15 +17,6 @@ export function LandingLayout(props: ILayoutProps) {
             <main className={classes.content}>
                 {props.children}
             </main>
-        </div>
-    )
-}
-
-export function ErrorLayout(props: ILayoutProps) {
-    return (
-        <div>
-            <GenericHeader />
-            {props.children}
         </div>
     )
 }
